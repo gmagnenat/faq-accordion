@@ -1,0 +1,10 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'reset' as *;
+
+body {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  min-height: 100svh;
+}

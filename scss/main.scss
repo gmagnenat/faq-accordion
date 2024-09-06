@@ -9,7 +9,7 @@ body {
   min-height: 100svh;
   background-color: $clr-light-pink;
   font-family: "Work Sans", sans-serif;
-  padding-inline: 1rem;
+  padding: 0 1rem 3rem;
 }
 
 .background__wrapper {
@@ -116,6 +116,11 @@ body {
   color: $clr-pink;
 }
 
+.faq__button:disabled {
+  color: $clr-dark-purple;
+  cursor: not-allowed;
+}
+
 .faq-panel[hidden] {
   display: none;
 }
@@ -125,9 +130,6 @@ body {
 }
 
 @media screen and (min-width: 48em) {
-  .faq__list {
-  }
-
   .faq__button {
     width: 100%;
     text-align: left;

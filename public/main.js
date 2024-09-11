@@ -1,10 +1,7 @@
-console.log("connected.");
-
 const faq = document.querySelectorAll(".faq__list");
 
 function toggleFaq() {
   const isExpanded = this.getAttribute("aria-expanded") === "true";
-  const contentId = this.getAttribute("aria-controls");
   this.setAttribute("aria-expanded", !isExpanded);
 }
 
@@ -16,7 +13,12 @@ function init() {
   faq.forEach((component) => {
     component.dataset.state = "ready";
 
+    const faqItems = component.querySelectorAll(".faq__item");
     const faqButtons = component.querySelectorAll(".faq__button");
+
+    faqItems.forEach((item) => {
+      item.dataset.state = "ready";
+    });
 
     faqButtons.forEach((button) => {
       button.removeAttribute("title");
@@ -27,4 +29,6 @@ function init() {
   });
 }
 
-init();
+document.addEventListener("DOMContentLoaded", () => {
+  init();
+});

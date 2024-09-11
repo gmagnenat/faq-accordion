@@ -23,9 +23,6 @@
         font-style: normal;
         font-display: swap;
       }
-      [data-state="no-js"] .faq__answer {
-        display: none;
-      }
     </style>
   </head>
   <body>
@@ -61,7 +58,7 @@
           FAQs
         </h1>
         <ul class="faq__list">
-          <li class="faq__item">
+          <li class="faq__item" data-state="no-js">
             <button
               id="faq1__question"
               class="faq__button"
@@ -73,14 +70,18 @@
               What is Frontend Mentor, and how will it help me?
               <span class="faq__icon"></span>
             </button>
-            <div id="faq1__content" class="faq__answer">
+            <div
+              id="faq1__content"
+              class="faq__answer"
+              aria-labelledby="faq1__question"
+            >
               Frontend Mentor offers realistic coding challenges to help
               developers improve their frontend coding skills with projects in
               HTML, CSS, and JavaScript. It's suitable for all levels and ideal
               for portfolio building.
             </div>
           </li>
-          <li class="faq__item">
+          <li class="faq__item" data-state="no-js">
             <button
               id="faq2__question"
               class="faq__button"
@@ -92,13 +93,17 @@
               Is Frontend Mentor free?
               <span class="faq__icon"></span>
             </button>
-            <div id="faq2__content" class="faq__answer">
+            <div
+              id="faq2__content"
+              class="faq__answer"
+              aria-labelledby="faq2__question"
+            >
               Yes, Frontend Mentor offers both free and premium coding
               challenges, with the free option providing access to a range of
               projects suitable for all skill levels.
             </div>
           </li>
-          <li class="faq__item">
+          <li class="faq__item" data-state="no-js">
             <button
               id="faq3__question"
               class="faq__button"
@@ -110,13 +115,17 @@
               Can I use Frontend Mentor projects in my portfolio?
               <span class="faq__icon"></span>
             </button>
-            <div id="faq3__content" class="faq__answer">
+            <div
+              id="faq3__content"
+              class="faq__answer"
+              aria-labelledby="faq3__question"
+            >
               Yes, you can use projects completed on Frontend Mentor in your
               portfolio. It's an excellent way to showcase your skills to
               potential employers!
             </div>
           </li>
-          <li class="faq__item">
+          <li class="faq__item" data-state="no-js">
             <button
               id="faq4__question"
               class="faq__button"
@@ -128,7 +137,11 @@
               How can I get help if I'm stuck on a Frontend Mentor challenge?
               <span class="faq__icon"></span>
             </button>
-            <div id="faq4__content" class="faq__answer">
+            <div
+              id="faq4__content"
+              class="faq__answer"
+              aria-labelledby="faq4__question"
+            >
               The best place to get help is inside Frontend Mentor's Discord
               community. There's a help channel where you can ask questions and
               seek support from other community members.
@@ -138,4 +151,12 @@
       </div>
     </main>
   </body>
+  <noscript>
+    <style>
+      [data-state="no-js"] .faq__button[aria-expanded="false"] + .faq__answer {
+        display: block;
+        opacity: 1;
+      }
+    </style>
+  </noscript>
 </html>
